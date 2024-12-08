@@ -1,7 +1,17 @@
-let score = {
+let jsonScore = localStorage.getItem("Score");
+let score = JSON.parse(jsonScore) || {
   wins: 0,
   loses: 0,
   ties: 0,
+};
+
+let resetScore = () => {
+  localStorage.clear();
+  score = {
+    wins: 0,
+    loses: 0,
+    ties: 0,
+  };
 };
 
 function playGame(userChoice) {
@@ -43,4 +53,5 @@ function playGame(userChoice) {
   document.getElementById(
     "ties"
   ).innerHTML = `Ties: <span>${score.ties} </span>`;
+  localStorage.setItem("Score", JSON.stringify(score));
 }

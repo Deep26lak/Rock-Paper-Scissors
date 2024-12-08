@@ -11,9 +11,18 @@
       <h1>Rock Paper Scissors</h1>
       <p>Make your choice:</p>
       <div class="buttons">
-        <button onclick="playGame('Rock')">🪨 Rock</button>
-        <button onclick="playGame('Paper')">📄 Paper</button>
-        <button onclick="playGame('Scissors')">✂️ Scissors</button>
+        <div class="img_container">
+          <img src="./assets/rock.jpg" onclick="playGame('Rock')" />
+          <h3>Rock</h3>
+        </div>
+        <div class="img_container">
+          <img src="./assets/paper2.png" onclick="playGame('Paper')" />
+          <h3>Paper</h3>
+        </div>
+        <div class="img_container">
+          <img src="./assets/scissors.png" onclick="playGame('Scissors')" />
+          <h3>Scissors</h3>
+        </div>
       </div>
       <div class="result">
         <p id="user-choice">Your Choice: <span>-</span></p>
@@ -23,11 +32,12 @@
       </div>
       <hr />
       <div class="records">
-        <h2 id="winner">Score</h2>
+        <h2 id="score">Score</h2>
 
         <p id="wins">Your Wins: <span>-</span></p>
         <p id="loses">Computer's wins: <span>-</span></p>
         <p id="ties">Ties: <span>-</span></p>
+        <h2 id="reset" onclick="resetScore()">Reset Score</h2>
       </div>
     </div>
     <script src="script.js"></script>
